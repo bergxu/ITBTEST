@@ -1,0 +1,14 @@
+ .BMap_cpyCtrl ,.BMap_noprint ,.anchorBL{
+ 	display: none;
+ }
+
+ .angular-google-map-container { 
+ 	height: 500px; 
+ }
+
+ .gmnoprint a, .gmnoprint span {
+  	display:none;
+}
+.gm-style-cc{
+  	display:none;
+}
