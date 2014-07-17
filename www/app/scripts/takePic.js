@@ -4,6 +4,7 @@ angular.module('testApp')
 	//$scope.backShow.show();
   //$scope.BlocateMe.hide();
   //$scope.GlocateMe.hide();
+  $scope.backShow.show();
 	var  pictureSource=navigator.camera.PictureSourceType;
   var  destinationType=navigator.camera.DestinationType;
 	

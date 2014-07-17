@@ -1,4 +1,4 @@
-var app = angular.module('testApp', ['ui.router','google-maps'])
+var app = angular.module('testApp', ['ui.router','google-maps','ngAnimate','ja.qr']).value('$anchorScroll', angular.noop)
 .config(function($stateProvider, $urlRouterProvider){
 
     $stateProvider
@@ -29,56 +29,39 @@ var app = angular.module('testApp', ['ui.router','google-maps'])
         });
 
      $urlRouterProvider.otherwise("/start")
-}).controller('mainCtl',function($scope, $state){
-    // $scope.backShow = {
-    //     flag : false,
-    //     show : function(){
-    //         this.flag = true;
-    //     },
-    //     hide : function(){
-    //         this.flag = false;
-    //     }
-    // };
-    //  $scope.BlocateMe = {
-    //     flag : false,
-    //     show : function(){
-    //         this.flag = true;
-    //     },
-    //     hide : function(){
-    //         this.flag = false;
-    //     }
-    // };
-    //  $scope.GlocateMe = {
-    //     flag : false,
-    //     show : function(){
-    //         this.flag = true;
-    //     },
-    //     hide : function(){
-    //         this.flag = false;
-    //     }
-    // };
+}).controller('mainCtl',function($rootScope, $scope, $state){
+    $scope.navHelp = {
+        slide : 'slide-left',
+        back : function (state, apply) {
+            this.slide = 'slide-right';
+            if(apply) {
+                $scope.$apply();
+            }
+            setTimeout(function() {
+                $state.go(state);
+            }, 10);
+        },
+        go : function(state, apply) {
+            this.slide = 'slide-left';
+            if(apply) {
+                $scope.$apply();
+            }
+            setTimeout(function() {
+                $state.go(state);
+            }, 10);
+        }
+    };
 
-    // $scope.bLocateMe = function(){
-    //    var mapObj = {
-    //         lat : 121.213884,
-    //         lng : 31.010887
-    //    }
-    //    var testMap = $scope.getMap();
-    //    testMap.myTest(mapObj);
-    // };
 
-    // $scope.gLocateMe = function(){
-    // };
-
-    // var context;
-    // var that = this;
-    // $scope.setMap = function(c) {
-    //     that.context = c;
-    // };
-
-    // $scope.getMap = function() {
-    //     return that.context;
-    // };
+    $scope.backShow = {
+        flag : false,
+        show : function(){
+            this.flag = true;
+        },
+        hide : function(){
+            this.flag = false;
+        }
+    };
 
 
     var getCurrentLocation = function() {

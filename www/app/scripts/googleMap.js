@@ -1,7 +1,7 @@
 angular.module('testApp')
 .controller('googleMapCtrl',function($scope, $state){
 
-
+    $scope.backShow.show();
      $scope.gLocateMe = function() {
         $scope.map.currentMarker.latitude = $scope.latitude;
         $scope.map.currentMarker.longitude = $scope.longitude;

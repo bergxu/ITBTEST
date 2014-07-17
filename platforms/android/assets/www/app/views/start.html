@@ -1,16 +1,10 @@
- <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="background:#3CB371;height:70px;padding-left:5px;padding-right:5px;">
-</nav>
-
-<div class="myCircle">
-  <div class="ring">
-  	<a ui-sref="scanner" class="menuItem fa fa-qrcode fa-2x"></a>
-    <a href="" class="menuItem fa fa-comment fa-2x"></a>
-    <a href="" class="menuItem fa fa-play fa-2x"></a>
-    <a ui-sref="takeCamera" class="menuItem fa fa-camera fa-2x"></a>
-    <a href="" class="menuItem fa fa-music fa-2x"></a>
-    <a ui-sref="googleMap" class="menuItem fa fa-globe fa-2x"></a>
-    <a href="" class="menuItem fa fa-trash-o fa-2x"></a>
-    <a ui-sref="baiduMap" class="menuItem fa fa-globe fa-2x"></a>
-  </div>
-  <button href="#" class="center fa fa-th fa-2x" ng-click="toggleMenu($event)"></button>
-</div>
+ <div style="position:absolute;">
+	 <ul>
+	 <li ng-click="navHelp.go('scanner')">Scanner</li>
+	 <li ng-click="navHelp.go('takeCamera')">Camera</li>
+	 <li ng-click="navHelp.go('baiduMap')">BaiduMap</li>
+	 <li ng-click="navHelp.go('googleMap')">GoogleMap</li>
+	 </ul>
+ </div>
+ 
+ 	

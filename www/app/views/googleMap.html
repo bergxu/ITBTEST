@@ -1,12 +1,7 @@
- <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="background:#3CB371;height:70px;padding-left:5px;padding-right:5px;">
-    <ul class="pager">
-         <li class="previous"><a ui-sref="start">Back</a></li>
-         <li class="next"><a ng-click="gLocateMe()">Locate Me</a></li>
-    </ul>
-</nav>
-
+ <div style="position:absolute;">
 <div style="width:800px;height:500px;">
 	<google-map center="map.center" zoom="map.zoom" draggable="true" dragging="map.dragging" bounds="map.bounds" options="map.options" pan="true" control="map.control">
 			<marker options="opts" coords="map.currentMarker"></marker>
 	</google-map>
+</div>
 </div>

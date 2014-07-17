@@ -4,10 +4,17 @@ angular.module('testApp')
 	//$scope.backShow.show();
     //$scope.BlocateMe.show();
     //$scope.GlocateMe.hide();
+
+    $scope.backShow.show();
 	var map = new BMap.Map("mapArea");
     var point = new BMap.Point(121.303884, 31.000887);
 
     map.centerAndZoom(point, 13);
+    
+    var transit = new BMap.TransitRoute(map, {
+    	  renderOptions: {map: map}
+    	});
+    transit.search("吴泾", "徐家汇");
 
     //var mapTest = {
     //    myTest: function(obj){
@@ -21,9 +28,12 @@ angular.module('testApp')
    // $scope.setMap(mapTest);
 
    $scope.bLocateMe = function() {
-        var newPoint = new BMap.point($scope.latitude, $scope.longitude);
-        map.centerAndZoom(newPoint, 13);
-        map.addOverlay(new BMap.Marker(newPoint));
+         var newPoint = new BMap.Point(120.213884, 30.010887);
+            //$scope.map.setCenter(myCenetr);
+            map.checkResize();
+            map.setCenter(newPoint);
+            map.enableAutoResize();
+            map.addOverlay(new BMap.Marker(newPoint));
         //$scope.map.center.latitude = $scope.latitude;
         //$scope.map.center.longitude = $scope.longitude;
         //$scope.$apply();
@@ -60,5 +70,6 @@ angular.module('testApp')
 
     var  infoWindow = new BMap.InfoWindow(content1, opts1);
     marker1.addEventListener('click',function(){ marker1.openInfoWindow(infoWindow);});
+
 
 });

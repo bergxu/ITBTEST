@@ -8,6 +8,7 @@
         <link rel="stylesheet" type="text/css" media="screen" href="app/styles/style.css" />
         <link rel="stylesheet" type="text/css" media="screen" href="app/styles/mapStyle.css" />
         <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
         <meta name="msapplication-tap-highlight" content="no" />
         <title>Test</title>
         
@@ -17,9 +18,13 @@
         <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
         <script type="text/javascript" src="bower_components/angular/angular.js"></script>
         <script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-        <script type="text/javascript" src="bower_components/angular-camera/dist/angular-camera.js"></script>
         <script type="text/javascript" src="bower_components/underscore/underscore.js"></script>
         <script type="text/javascript" src="bower_components/angular-google-maps/dist/angular-google-maps.js"></script>
+
+        <script type="text/javascript" src="bower_components/qrcode/lib/qrcode.js"></script>
+        <script type="text/javascript" src="bower_components/angular-qr/src/angular-qr.js"></script>
+
+        <script type="text/javascript" src="app/libs/angular-animate.js"></script>
         
         <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
         <script type="text/javascript" src="app/scripts/app.js"></script>
@@ -28,10 +33,19 @@
         <script type="text/javascript" src="app/scripts/takePic.js"></script>
         <script type="text/javascript" src="app/scripts/baiduMap.js"></script>
         <script type="text/javascript" src="app/scripts/googleMap.js"></script>
+
+        <style>            
+            
+    </style>
     </head>
 
     <body style="height:100%;background:#BEBEBE" ng-controller="mainCtl">
-        <div ui-view style="height:100%;margin-top:70px;" >
+         <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="background:#3CB371;height:70px;padding-left:5px;padding-right:5px;">
+            <ul class="pager">
+                 <li class="previous"><a ng-show="backShow.flag" ng-click="navHelp.back('start')">Back</a></li>
+            </ul>
+        </nav>
+        <div ui-view style="height:100%;position: relative;" ng-class="navHelp.slide">
         </div>
 
     </body>

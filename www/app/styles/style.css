@@ -1,82 +1,95 @@
 @import "http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css";
 
-a {
-  font-size: 14px;
-  text-decoration: none;
-  outline: 0;
+
+body{
+   padding-top: 70px; 
 }
 
-.myCircle,
-.ring {
-  height: 300px;
-  position: relative;
-  width: 300px;
+
+/*************************************************************************************************************/
+/********************************************* Switch Effect *************************************************/
+/*************************************************************************************************************/
+/* slide switch effect */
+.slide.ng-enter, 
+.slide.ng-leave
+{ 
+    -webkit-transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    -moz-transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    -ms-transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    -o-transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+} 
+ 
+.slide.ng-enter {
+    left: 100%;
+}
+.slide.ng-enter.ng-enter-active {
+    left: 0;
+}
+ 
+.slide.ng-leave {
+    left: 0;
+}
+.slide.ng-leave.ng-leave-active{
+    left: -100%;
 }
 
-.myCircle {
-  margin: 0 auto;
+.slide-left.ng-enter,
+.slide-left.ng-leave,
+.slide-right.ng-enter,
+.slide-right.ng-leave {
+    /*position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    background: inherit;*/
+    position: absolute;
+    display: block;
+    -ms-transition: .25s ease-in-out;
+    -webkit-transition: .25s ease-in-out;
+    transition:  .25s ease-in-out;
 }
 
-.ring {
-  background-color: #79CDCD;
-  border-radius: 50%;
-  opacity: 0;
-  
-  -webkit-transform-origin: 50% 50%;
-  -moz-transform-origin: 50% 50%;
-  transform-origin: 50% 50%;
 
-  -webkit-transform: scale(0.1) rotate(-270deg);
-  -moz-transform: scale(0.1) rotate(-270deg);
-  -transform: scale(0.1) rotate(-270deg);
-
-  -webkit-transition: all 0.4s ease-out;
-  -moz-transition: all 0.4s ease-out;
-  transition: all 0.4s ease-out;
+.slide-left.ng-enter {
+    z-index: 101;
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
 }
 
-.open .ring {
-  opacity: 1;
-  
-  -webkit-transform: scale(1) rotate(0);
-  -moz-transform: scale(1) rotate(0);
-  -transform: scale(1) rotate(0);
+.slide-left.ng-enter.ng-enter-active {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
 }
 
-.center {
-  background-color: #7B68EE;
-  border-radius: 50%;
-  border: 0px;
-  bottom: 0;
-  color: white;
-  height: 80px;
-  left: 0;
-  line-height: 80px;
-  margin: auto;
-  position: absolute;
-  right: 0;
-  text-align: center;
-  top: 0;
-  width: 80px;
-  
-  -webkit-transition: all 0.4s ease-out;
-  -moz-transition: all 0.4s ease-out;
-  transition: all 0.4s ease-out;
+.slide-left.ng-leave {
+    z-index: 100;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
 }
 
-.open .center {
-  border-color: #aaaaaa;
+.slide-left.ng-leave.ng-leave-active {
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
 }
 
-.menuItem {
-  border-radius: 50%;
-  color: #eeeeee;
-  display: block;
-  height: 40px;
-  line-height: 40px;
-  margin-left: -20px;
-  margin-top: -20px;
-  position: absolute;
-  text-align: center;
-  width: 40px;
+.slide-right.ng-enter {
+    z-index: 100;
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
 }
+
+.slide-right.ng-enter.ng-enter-active {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+}
+
+.slide-right.ng-leave {
+    z-index: 101;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+}
+
+.slide-right.ng-leave.ng-leave-active {
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+}
+
