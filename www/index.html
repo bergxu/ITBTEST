@@ -5,9 +5,12 @@
         <meta name="format-detection" content="telephone=no" />
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+        
         <link rel="stylesheet" type="text/css" media="screen" href="app/styles/style.css" />
         <link rel="stylesheet" type="text/css" media="screen" href="app/styles/mapStyle.css" />
-        <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" media="screen" href="app/styles/start.css" />
+        
 
         <meta name="msapplication-tap-highlight" content="no" />
         <title>Test</title>
@@ -30,6 +33,7 @@
         <script type="text/javascript" src="app/scripts/app.js"></script>
         <script type="text/javascript" src="app/scripts/start.js"></script>
         <script type="text/javascript" src="app/scripts/scanner.js"></script>
+        <script type="text/javascript" src="app/scripts/qrEncode.js"></script>
         <script type="text/javascript" src="app/scripts/takePic.js"></script>
         <script type="text/javascript" src="app/scripts/baiduMap.js"></script>
         <script type="text/javascript" src="app/scripts/googleMap.js"></script>
@@ -39,13 +43,24 @@
     </style>
     </head>
 
-    <body style="height:100%;background:#BEBEBE" ng-controller="mainCtl">
-         <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="background:#3CB371;height:70px;padding-left:5px;padding-right:5px;">
-            <ul class="pager">
-                 <li class="previous"><a ng-show="backShow.flag" ng-click="navHelp.back('start')">Back</a></li>
-            </ul>
-        </nav>
-        <div ui-view style="height:100%;position: relative;" ng-class="navHelp.slide">
+    <body ng-controller="mainCtl">
+        <div class="Header" id="Header">
+            <table border="0" cellpadding="0" cellspacing="0" width="100%" height="60px">
+                <tr>
+                    <td class="header Left" ng-click="navHelp.back(backShow.name)">
+                        <img ng-show="backShow.flag" ng-click="navHelp.back(backShow.name)"src="app\imges\arrowed-big-left-white.png" />
+                    </td>
+                    <td class="header Middle">
+                        <p> {{backShow.title}} </p>
+                    </td>
+                    <td class="header Right">
+                        &nbsp;
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="Bodyer" id="Bodyer" ui-view ng-class="navHelp.slide">
         </div>
 
     </body>

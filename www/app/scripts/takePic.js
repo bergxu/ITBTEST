@@ -1,12 +1,24 @@
 angular.module('testApp')
 .controller('takeCameraCtrl',function($scope, $state){
 	
-	//$scope.backShow.show();
-  //$scope.BlocateMe.hide();
-  //$scope.GlocateMe.hide();
   $scope.backShow.show();
-	var  pictureSource=navigator.camera.PictureSourceType;
-  var  destinationType=navigator.camera.DestinationType;
+  $scope.backShow.name = 'start';
+  $scope.backShow.title = 'Take Picture';
+
+  $scope.piclistItems = [
+    {
+        itemFunction : function(){
+          $scope.capturePhoto();
+      },title : 'take Picture'
+    },
+    {
+        itemFunction : function(){
+          $scope.getPhoto();
+      },title : 'Pic from library'
+    }
+  ];
+	var  pictureSource = navigator.camera.PictureSourceType;
+  var  destinationType = navigator.camera.DestinationType;
 	
   $scope.capturePhoto = function(){
         navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50,

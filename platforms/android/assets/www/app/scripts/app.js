@@ -7,6 +7,11 @@ var app = angular.module('testApp', ['ui.router','google-maps','ngAnimate','ja.q
             templateUrl: "app/views/scanner.html",
             controller: 'scannerCtrl'
         })
+        .state('qrEncode', {
+            url: "/qrEncode",
+            templateUrl: "app/views/qrEncode.html",
+            controller: 'qrEncodeCtrl'
+        })
         .state('takeCamera', {
             url: "/takeCamera",
             templateUrl: "app/views/takeCamera.html",
@@ -30,6 +35,10 @@ var app = angular.module('testApp', ['ui.router','google-maps','ngAnimate','ja.q
 
      $urlRouterProvider.otherwise("/start")
 }).controller('mainCtl',function($rootScope, $scope, $state){
+
+    $scope.containerWidth = window.innerWidth;
+    $scope.containerHeight = window.innerHeight - 80;
+
     $scope.navHelp = {
         slide : 'slide-left',
         back : function (state, apply) {
@@ -55,6 +64,8 @@ var app = angular.module('testApp', ['ui.router','google-maps','ngAnimate','ja.q
 
     $scope.backShow = {
         flag : false,
+        name : '',
+        title :'',
         show : function(){
             this.flag = true;
         },

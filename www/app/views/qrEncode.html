@@ -1,0 +1,8 @@
+<div class="TwoDimensionCode" style="position:absolute;margin-top:20px;width: 100%;">
+	<div class="Search">
+		<textarea type="text" id="PhSearchInput" class="PhSearchInput"  ng-model="qrcodeString" placeholder="YOUR TEXT TO ENCODE"></textarea>
+	</div>
+	<div class="QRCode">
+		<qr text="qrcodeString" type-number="typeNumber" correction-level="correctionLevel" size="size" input-mode="inputMode" image="image"></qr>
+	</div>
+</div>

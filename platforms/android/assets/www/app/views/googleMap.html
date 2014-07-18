@@ -1,7 +1,10 @@
- <div style="position:absolute;">
-<div style="width:800px;height:500px;">
-	<google-map center="map.center" zoom="map.zoom" draggable="true" dragging="map.dragging" bounds="map.bounds" options="map.options" pan="true" control="map.control">
-			<marker options="opts" coords="map.currentMarker"></marker>
-	</google-map>
-</div>
+<div style="position:absolute;">
+	<div style="width:100%;">
+		<google-map center="map.center" zoom="map.zoom" draggable="true" dragging="map.dragging" bounds="map.bounds" options="map.options" pan="true" control="map.control">
+			<marker coords="map.currentMarker"></marker>
+		</google-map>
+	</div>
+	<div class="MapPositon" ng-click="gLocateMe()">
+		<img src="app\imges\MapPosition.png" ng-click="gLocateMe()"/>
+	</div>
 </div>

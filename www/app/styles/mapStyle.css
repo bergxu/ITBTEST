@@ -1,9 +1,6 @@
+
  .BMap_cpyCtrl ,.BMap_noprint ,.anchorBL{
  	display: none;
- }
-
- .angular-google-map-container { 
- 	height: 500px; 
  }
 
  .gmnoprint a, .gmnoprint span {
@@ -11,4 +8,16 @@
 }
 .gm-style-cc{
   	display:none;
+}
+
+/**** Map ****/
+.MapPositon {
+	position: relative;
+	margin-left: 1%;
+	height: inherit;
+}
+
+.MapPositon img {
+	position: absolute;
+	bottom: 15px;
 }

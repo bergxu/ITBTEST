@@ -1,42 +1,28 @@
 angular.module('testApp')
 .controller('baiduMapCtrl',function($scope, $state){
 
-	//$scope.backShow.show();
-    //$scope.BlocateMe.show();
-    //$scope.GlocateMe.hide();
+    $('.mapContainer').css('height', $scope.containerHeight + 'px');
+    $('.mapContainer').css('width', $scope.containerWidth + 'px');
 
     $scope.backShow.show();
+    $scope.backShow.name = 'start';
+    $scope.backShow.title = 'Baidu Map';
+
 	var map = new BMap.Map("mapArea");
     var point = new BMap.Point(121.303884, 31.000887);
 
     map.centerAndZoom(point, 13);
-    
     var transit = new BMap.TransitRoute(map, {
-    	  renderOptions: {map: map}
-    	});
-    transit.search("莘庄", "徐家汇");
-
-    //var mapTest = {
-    //    myTest: function(obj){
-            // map.getCenter().lat = 120.213884;
-             //map.getCenter().lng = 30.010887;
-             //console.
-            // log(obj.lat + "===" + obj.lng);
-    //    }
-   // }
-
-   // $scope.setMap(mapTest);
+          renderOptions: {map: map}
+        });
+    transit.search("吴泾", "徐家汇");
 
    $scope.bLocateMe = function() {
-         var newPoint = new BMap.Point(120.213884, 30.010887);
-            //$scope.map.setCenter(myCenetr);
-            map.checkResize();
-            map.setCenter(newPoint);
-            map.enableAutoResize();
-            map.addOverlay(new BMap.Marker(newPoint));
-        //$scope.map.center.latitude = $scope.latitude;
-        //$scope.map.center.longitude = $scope.longitude;
-        //$scope.$apply();
+        var newPoint = new BMap.Point($scope.longitude, $scope.latitude);
+        map.checkResize();
+        map.setCenter(newPoint);
+        map.enableAutoResize();
+        map.addOverlay(new BMap.Marker(newPoint));
      }
 
     map.enableScrollWheelZoom();
@@ -47,16 +33,16 @@ angular.module('testApp')
 
     
     map.addEventListener("click", function(e){    
-     alert(e.point.lng + ", " + e.point.lat);    
+     console.log(e.point.lng + ", " + e.point.lat);    
     });
 
     map.addEventListener("zoomend", function(){    
-     alert("地图缩放至：" + this.getZoom() + "级");    
+     console.log("地图缩放至：" + this.getZoom() + "级");    
     });
 
     map.addEventListener("dragend", function(){    
      var center = map.getCenter();    
-     alert("地图中心点变更为：" + center.lng + ", " + center.lat);    
+     console.log("地图中心点变更为：" + center.lng + ", " + center.lat);    
     });
 
     var currentMarker = new BMap.Marker(point);

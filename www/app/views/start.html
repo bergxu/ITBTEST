@@ -1,10 +1,22 @@
- <div style="position:absolute;">
-	 <ul>
-	 <li ng-click="navHelp.go('scanner')">Scanner</li>
-	 <li ng-click="navHelp.go('takeCamera')">Camera</li>
-	 <li ng-click="navHelp.go('baiduMap')">BaiduMap</li>
-	 <li ng-click="navHelp.go('googleMap')">GoogleMap</li>
-	 </ul>
- </div>
+	<div class="Liners">
+		<div class="Imgers" ng-click="navHelp.go(item.name)" ng-repeat="item in listItems">
+			<table border="0" cellpadding="0" cellspacing="0" width="100%" height="100%">
+				<tr>
+					<td class="Imager Nbsp">
+						&nbsp;
+					</td>
+					<td class="Imager Left" >
+						<img src="app\imges\clock.png" />
+					</td>
+					<td class="Imager Middle">
+						<p> {{item.title}} </p>
+					</td>
+					<td class="Imager Right">
+						<img src="app\imges\arrowed-big-right-white.png" />
+					</td>
+				</tr>
+			</table>
+		</div>
+		
+	</div>
  
- 	

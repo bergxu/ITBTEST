@@ -1,7 +1,14 @@
 angular.module('testApp')
 .controller('googleMapCtrl',function($scope, $state){
 
+
+    $('.angular-google-map-container').css('height', $scope.containerHeight + 'px');
+    $('.angular-google-map-container').css('width', $scope.containerWidth + 'px');
+
     $scope.backShow.show();
+    $scope.backShow.name = 'start';
+    $scope.backShow.title = 'Google Map';
+    
      $scope.gLocateMe = function() {
         $scope.map.currentMarker.latitude = $scope.latitude;
         $scope.map.currentMarker.longitude = $scope.longitude;
@@ -10,10 +17,6 @@ angular.module('testApp')
         $scope.$apply();
      }
     
-
-	//$scope.backShow.show();
-	//$scope.BlocateMe.hide();
-    //$scope.GlocateMe.show();
 	angular.extend($scope, {
         map: {
             control: {},

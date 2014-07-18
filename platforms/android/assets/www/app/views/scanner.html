@@ -1,57 +1,20 @@
- <div style="position:absolute;">
-	<ul class="nav nav-pills nav-stacked" >
-	  <li><a class="btn btn-default btn-lg" style="background:#CBCBCB" ng-click="scannerCode()">Scanner</a></li>
-	  <li><a class="btn btn-default btn-lg" style="background:#CBCBCB" ng-click="createBarCode()">Create Scanner</a></li>
-	</ul>
+<div class="Liners">
+    <div class="Imgers" ng-click="qritem.itemFunction()" ng-repeat="qritem in QRlistItems">
+      <table border="0" cellpadding="0" cellspacing="0" width="100%" height="100%">
+        <tr>
+          <td class="Imager Nbsp">
+            &nbsp;
+          </td>
+          <td class="Imager Left" >
+            <img src="app\imges\clock.png" />
+          </td>
+          <td class="Imager Middle">
+            <p> {{qritem.title}} </p>
+          </td>
+          <td class="Imager Right">
+            <img src="app\imges\arrowed-big-right-white.png" />
+          </td>
+        </tr>
+      </table>
+    </div>   
 </div>
-
-<p>
-      <qr text="qrcodeString" type-number="typeNumber" correction-level="correctionLevel" size="size" input-mode="inputMode" image="image"></qr>
-    </p>
-    <p>
-      <textarea type="text" id="text" class="textarea" ng-model="qrcodeString" placeholder="YOUR TEXT TO ENCODE"></textarea>
-    </p>
-
-    <!-- <h3>Optional attributes:</h3>
-
-    <p>
-      <label for="typeNumber">Type Number:</label>
-      <span>{{typeNumber}} (use 0 as minimal possible)</span>
-    </p>
-    <p>
-      <input type="range" id="typeNumber" class="range" ng-model="typeNumber" min="0" max="40"/>
-    </p>
-
-    <p>
-      <label for="size">Correction Level:</label>
-      <span>{{correctionLevel}}</span>
-    </p>
-    <p>
-      <input type="radio" id="correctionLevel" ng-model="correctionLevel" value=""/>  Auto (M)
-      <input type="radio" id="correctionLevel" ng-model="correctionLevel" value="L"/>  L (Low)
-      <input type="radio" id="correctionLevel" ng-model="correctionLevel" value="M"/>  M (Medium)
-      <input type="radio" id="correctionLevel" ng-model="correctionLevel" value="Q"/>  Q (Quartile)
-      <input type="radio" id="correctionLevel" ng-model="correctionLevel" value="H"/>  H (High)
-    </p>
-
-    <p>
-      <label for="size">Size:</label>
-      <span>{{size}}</span>
-    </p>
-    <p>
-      <input type="range" id="size" class="range" ng-model="size" min="100" max="500"/>
-    </p>
-
-    <p>
-      <label for="size">Input Mode:</label>
-      <span>{{inputMode}}</span>
-    </p>
-    <p>
-      <input type="radio" id="inputMode" ng-model="inputMode" value=""/>  Auto
-      <input type="radio" id="inputMode" ng-model="inputMode" value="NUMBER"/>  NUMBER
-      <input type="radio" id="inputMode" ng-model="inputMode" value="ALPHA_NUM"/>  ALPHA_NUM
-      <input type="radio" id="inputMode" ng-model="inputMode" value="8bit"/>  8bit
-    </p> -->
-    
-
- 	
