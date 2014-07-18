@@ -9,12 +9,12 @@ angular.module('testApp')
     {
         itemFunction : function(){
           $scope.capturePhoto();
-      },title : 'take Picture'
+      },title : 'take Picture', imageSrc: 'app/imges/takepicture.png'
     },
     {
         itemFunction : function(){
           $scope.getPhoto();
-      },title : 'Pic from library'
+      },title : 'Pic from library', imageSrc: 'app/imges/takepictureAlbum.png'
     }
   ];
 	var  pictureSource = navigator.camera.PictureSourceType;

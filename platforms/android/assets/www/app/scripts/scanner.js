@@ -9,10 +9,10 @@ angular.module('testApp')
   $scope.QRlistItems = [
     {itemFunction : function(){
         $scope.scannerCode();
-    }, title :'QR Scanner'},
+    }, title :'QR Scanner', imageSrc : 'app/imges/QR.png'},
     {itemFunction :function(){
         $scope.navHelp.go('qrEncode');
-    }, title :'QR Encode'}
+    }, title :'QR Encode', imageSrc : 'app/imges/add.png'}
   ];
 
 
