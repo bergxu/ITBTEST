@@ -4,11 +4,10 @@ angular.module('testApp')
   $scope.backShow.show();
   $scope.backShow.name = 'start';
   $scope.backShow.title = 'QR Scanner';
-  var scanner = cordova.require('com.phonegap.plugins.barcodescanner.barcodescanner');
 
   $scope.QRlistItems = [
     {itemFunction : function(){
-        $scope.scannerCode();
+        $scope.scannerCode.scan();
     }, title :'QR Scanner', imageSrc : 'app/imges/QR.png'},
     {itemFunction :function(){
         $scope.navHelp.go('qrEncode');
@@ -16,15 +15,24 @@ angular.module('testApp')
   ];
 
 
-	$scope.scannerCode = function(){
-		scanner.scan( function (result) { 
-            console.log("Scanner result: \n" +
-                "text: " + result.text + "\n" +
-                "format: " + result.format + "\n" +
-                "cancelled: " + result.cancelled + "\n");
-        }, function (error) { 
-            console.log("Scanning failed: ", error); 
-        } );
+	$scope.scannerCode = {
+			scan: function() {
+			    	cordova.exec(
+			        	this.scanSuccess,
+			        	this.scanError,
+			        	'ScanditSDK', 'scan', ['KglWlBLkEeSfgDl+wsT2NXhkT0+lQKRyfzDjkoyEgdE', {
+			            	'beep': true,
+			            	'1DScanning': true,
+			            	'2DScanning': true
+			        	}]);
+			},
+			scanSuccess: function(data) {
+				alert(data[0]);
+		    	alert(data[1]);
+			},
+			scanError: function(error) {
+			    	console.log('Failed: ' + error);
+			}
 	};
 
 });

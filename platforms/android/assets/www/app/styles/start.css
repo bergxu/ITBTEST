@@ -29,7 +29,7 @@ body {
 .header {
 	text-align: center;
 	vertical-align: middle;
-	font-size: 25px;
+	font-size: 20px;
 }
 
 p {
@@ -41,12 +41,12 @@ p {
 }
 
 .header.Middle {
-	width: 80%;
+	width: 70%;
 	color: #ffffff;
 }
 
 .header.Right {
-	width: 10%;
+	width: 20%;
 }
 
 
@@ -73,7 +73,7 @@ img {
 .Imgers {
 	background: #414549;
 	height: auto;
-	margin-top: 0.3%;
+	margin-top: 1%;
 	color: #2499d2;
 	padding: 1% 0;
 }
